@@ -3,29 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RedPitaya", "RedPitaya.vcxproj", "{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPitaya", "RedPitaya.csproj", "{4050423C-E86C-487A-9A60-28469CE72941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Debug|x64.ActiveCfg = Debug|x64
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Debug|x64.Build.0 = Debug|x64
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Debug|x86.ActiveCfg = Debug|Win32
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Debug|x86.Build.0 = Debug|Win32
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Release|x64.ActiveCfg = Release|x64
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Release|x64.Build.0 = Release|x64
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Release|x86.ActiveCfg = Release|Win32
-		{1CCBA5BC-9B34-4E4C-A5D5-B251C32DDF45}.Release|x86.Build.0 = Release|Win32
+		{4050423C-E86C-487A-9A60-28469CE72941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4050423C-E86C-487A-9A60-28469CE72941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4050423C-E86C-487A-9A60-28469CE72941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4050423C-E86C-487A-9A60-28469CE72941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {788C6DC7-B94B-467C-9943-192FEA08190F}
+		SolutionGuid = {CA51677C-F185-4577-8377-B6CD27973C7A}
 	EndGlobalSection
 EndGlobal
