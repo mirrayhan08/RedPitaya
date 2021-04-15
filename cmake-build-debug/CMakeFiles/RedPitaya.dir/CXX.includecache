@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/main.cpp
+string
+-
+fstream
+-
+iostream
+-
+sstream
+-
+vector
+-
+
