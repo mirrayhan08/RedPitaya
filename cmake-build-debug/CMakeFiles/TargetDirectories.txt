@@ -1,3 +1,3 @@
-C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/RedPitaya.dir
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/MirTest.dir
 C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/rebuild_cache.dir

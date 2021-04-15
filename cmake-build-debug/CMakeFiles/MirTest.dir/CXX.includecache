@@ -7,14 +7,16 @@
 #IncludeRegexTransform: 
 
 C:/D/MS Study/3rd Semester/AIS/RedPitaya/main.cpp
-string
+stdlib.h
 -
-fstream
+stdio.h
+-
+math.h
+-
+string.h
 -
 iostream
 -
-sstream
--
-vector
+fstream
 -
 

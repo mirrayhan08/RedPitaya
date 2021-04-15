@@ -1,86 +1,94 @@
-#include <string>
-#include <fstream>  // this is to import the ifstream and ofstream objects
-#include <iostream>  // this is to import the cin and cout objects
-#include <sstream>
-using namespace std;
-#include <vector>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <iostream>
+#include <fstream>
 
+float CalculateMean(float *value, int max)
+{
+    int i;
+    float sum = 0;
+    for( i = 0; i < max; i++)
+        sum = sum + value[i];
+    return (sum / max);
+}
 
-/**
- * Reads csv file into table, exported as a vector of vector of doubles.
- * @param inputFileName input file name (full path).
- * @return data as vector of vector of doubles.
- */
-vector<vector<double>> parse2DCsvFile(string inputFileName) {
+float CalculateVariane(float *value, int max)
+{
+    float mean = CalculateMean(value, max);
+    int i = 0;
+    float temp = 0;
 
-    vector<vector<double> > data;
-    ifstream inputFile(inputFileName);
-    int l = 0;
+    for(i = 0; i < max; i++)
+        temp += (value[i] - mean) * (value[i] - mean) ;
+    return temp / max;
+}
 
-    while (inputFile) {
-        l++;
-        string s;
-        if (!getline(inputFile, s)) break;
-        if (s[0] != '#') {
-            istringstream ss(s);
-            vector<double> record;
-
-            while (ss) {
-                string line;
-                if (!getline(ss, line, ','))
-                    break;
-                try {
-                    record.push_back(stof(line));
-                }
-                catch (const std::invalid_argument e) {
-                    cout << "NaN found in file " << inputFileName << " line " << l
-                         << endl;
-                    e.what();
-                }
+float CalculateMedian(float *arrValue, int max)
+{
+    float median = 0;
+    float value[100];
+    int i, j;
+    float temp;
+    if(max > 100)
+        return 0;
+    for(i = 0; i < max; i++)
+        value[i] = arrValue[i];
+    for(i = 0; i < max; i++)
+    {
+        for(j = 0; j < max - i - 1; j++)
+        {
+            if(value[j] > value[j + 1])
+            {
+                temp = value[j];
+                value[j] = value[j + 1];
+                value[j + 1] = temp;
             }
-
-            data.push_back(record);
         }
     }
-
-    if (!inputFile.eof()) {
-        cerr << "Could not read file " << inputFileName << "\n";
-        __throw_invalid_argument("File not found.");
+    if( (max % 2) == 1)
+    {
+        median =  value[ (max + 1) / 2 - 1];
     }
+    else
+    {
+        median = (value[max / 2] + value[max / 2 - 1]) / 2;
+    }
+    return median;
+}
 
-    return data;
+float GetStandardDeviation(float *value, int max)
+{
+    return sqrt(CalculateVariane(value, max));
 }
 
 int main()
 {
+    float arrNumbers[100];
+    double balance[85] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
+    int i, max;
+    float mean, variance, median, devi;
+    char buf[1024];
+    printf("Total Number of Elements: ");
+    scanf("%d", &max);
 
-    const char comma = ',';
-    string line, word;
-
-    ifstream in( "C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\human.txt" );   if ( !in ) { cerr << "Can't open file"; return 1; }
-    ofstream out( "C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\human_mir.csv" );
-
-    while( getline( in, line ) )          // get successive line of text
+    for(i = 0; i < max; i++)
     {
-        stringstream ss( line );
-        bool first = true;
-        while ( ss >> word )               // get successive words per line
-        {
-            if ( !first ) out << comma;     // second and later words need a separator
-            out << word;
-            first = false;
-        }
-        out << '\n';                      // end of line of output
+        printf("Enter [%d] Number: ", i + 1);
+        scanf("%f", &arrNumbers[i]);
     }
 
-    vector<vector<double>> data;
-    data = parse2DCsvFile("C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\human_mir.csv");
+    printf("Total Numbers: %d\n", max);
 
-    for (auto l : data) {
-        for (auto x : l)
-            cout << x << " ";
-        cout << endl;
-    }
+    mean = CalculateMean(arrNumbers, max);
+    median = CalculateMedian(arrNumbers, max);
+    variance = CalculateVariane(arrNumbers, max);
+    devi = GetStandardDeviation(arrNumbers, max);
 
+    printf("Mean: %f", mean);
+    printf("\nVariance: %f",  variance);
+    printf("\nMedian: %f", median);
+    printf("\nDeviation: %f", devi);
     return 0;
 }

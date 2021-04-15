@@ -1,0 +1,3 @@
+"C:\Users\Mir Mehedi Hasan\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\MirTest.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\MirTest.dir/objects.a @CMakeFiles\MirTest.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\MirTest.dir/objects.a -Wl,--no-whole-archive -o MirTest.exe -Wl,--out-implib,libMirTest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MirTest.dir\linklibs.rsp

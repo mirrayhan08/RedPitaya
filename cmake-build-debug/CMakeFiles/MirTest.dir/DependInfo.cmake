@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/D/MS Study/3rd Semester/AIS/RedPitaya/main.cpp" "C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/RedPitaya.dir/main.cpp.obj"
+  "C:/D/MS Study/3rd Semester/AIS/RedPitaya/main.cpp" "C:/D/MS Study/3rd Semester/AIS/RedPitaya/cmake-build-debug/CMakeFiles/MirTest.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
