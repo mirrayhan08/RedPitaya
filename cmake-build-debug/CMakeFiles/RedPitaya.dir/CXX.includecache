@@ -17,4 +17,26 @@ sstream
 -
 vector
 -
+algorithm
+-
+cmath
+-
+iterator
+-
+limits
+-
+QCoreApplication
+-
+sockettest.h
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.h
+
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.cpp
+sockettest.h
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.h
+
+C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.h
+QObject
+-
+QTcpSocket
+-
 

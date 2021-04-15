@@ -3,4 +3,4 @@ project(RedPitaya)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RedPitaya main.cpp)
+add_executable(RedPitaya main.cpp data_get.cpp sockettest.cpp sockettest.h)

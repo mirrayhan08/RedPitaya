@@ -80,7 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/D/MS Study/3rd Semester/AIS/RedPitaya/data_get.cpp">
+			<Option target="RedPitaya"/>
+		</Unit>
 		<Unit filename="C:/D/MS Study/3rd Semester/AIS/RedPitaya/main.cpp">
+			<Option target="RedPitaya"/>
+		</Unit>
+		<Unit filename="C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.cpp">
+			<Option target="RedPitaya"/>
+		</Unit>
+		<Unit filename="C:/D/MS Study/3rd Semester/AIS/RedPitaya/sockettest.h">
 			<Option target="RedPitaya"/>
 		</Unit>
 		<Unit filename="C:/D/MS Study/3rd Semester/AIS/RedPitaya/CMakeLists.txt">

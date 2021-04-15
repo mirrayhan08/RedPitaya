@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/RedPitaya.dir/data_get.cpp.obj"
   "CMakeFiles/RedPitaya.dir/main.cpp.obj"
+  "CMakeFiles/RedPitaya.dir/sockettest.cpp.obj"
   "RedPitaya.exe"
   "RedPitaya.exe.manifest"
   "RedPitaya.pdb"

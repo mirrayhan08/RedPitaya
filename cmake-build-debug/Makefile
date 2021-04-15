@@ -141,6 +141,33 @@ RedPitaya/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/build
 .PHONY : RedPitaya/fast
 
+data_get.obj: data_get.cpp.obj
+
+.PHONY : data_get.obj
+
+# target to build an object file
+data_get.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/data_get.cpp.obj
+.PHONY : data_get.cpp.obj
+
+data_get.i: data_get.cpp.i
+
+.PHONY : data_get.i
+
+# target to preprocess a source file
+data_get.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/data_get.cpp.i
+.PHONY : data_get.cpp.i
+
+data_get.s: data_get.cpp.s
+
+.PHONY : data_get.s
+
+# target to generate assembly for a file
+data_get.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/data_get.cpp.s
+.PHONY : data_get.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -168,6 +195,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sockettest.obj: sockettest.cpp.obj
+
+.PHONY : sockettest.obj
+
+# target to build an object file
+sockettest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/sockettest.cpp.obj
+.PHONY : sockettest.cpp.obj
+
+sockettest.i: sockettest.cpp.i
+
+.PHONY : sockettest.i
+
+# target to preprocess a source file
+sockettest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/sockettest.cpp.i
+.PHONY : sockettest.cpp.i
+
+sockettest.s: sockettest.cpp.s
+
+.PHONY : sockettest.s
+
+# target to generate assembly for a file
+sockettest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/sockettest.cpp.s
+.PHONY : sockettest.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -177,9 +231,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... RedPitaya
+	@echo ... data_get.obj
+	@echo ... data_get.i
+	@echo ... data_get.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... sockettest.obj
+	@echo ... sockettest.i
+	@echo ... sockettest.s
 .PHONY : help
 
 
