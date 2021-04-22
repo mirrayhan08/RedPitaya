@@ -129,17 +129,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MirTest
+# Target rules for targets named RedPitaya
 
 # Build rule for target.
-MirTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MirTest
-.PHONY : MirTest
+RedPitaya: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 RedPitaya
+.PHONY : RedPitaya
 
 # fast build rule for target.
-MirTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MirTest.dir\build.make CMakeFiles/MirTest.dir/build
-.PHONY : MirTest/fast
+RedPitaya/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/build
+.PHONY : RedPitaya/fast
 
 main.obj: main.cpp.obj
 
@@ -147,7 +147,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MirTest.dir\build.make CMakeFiles/MirTest.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -156,7 +156,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MirTest.dir\build.make CMakeFiles/MirTest.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -165,7 +165,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MirTest.dir\build.make CMakeFiles/MirTest.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RedPitaya.dir\build.make CMakeFiles/RedPitaya.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -176,7 +176,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... MirTest
+	@echo ... RedPitaya
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

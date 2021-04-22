@@ -3,4 +3,4 @@ project(MirTest)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MirTest main.cpp)
+add_executable(RedPitaya main.cpp)

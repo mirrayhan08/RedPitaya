@@ -65,9 +65,9 @@ float GetStandardDeviation(float *value, int max)
 
 int main()
 {
-    float arrNumbers[100];
+    float arrNumbers[100], sum = 0, average;
     double balance[85] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
-    int i, max;
+    int i, l, max, marks[10];
     float mean, variance, median, devi;
     char buf[1024];
     printf("Total Number of Elements: ");
@@ -90,5 +90,19 @@ int main()
     printf("\nVariance: %f",  variance);
     printf("\nMedian: %f", median);
     printf("\nDeviation: %f", devi);
+
+    //Calculate the Array Values
+    for(l=0; l<85; ++l)
+    {
+        scanf("%d", &marks[l]);
+
+        // adding integers entered by the user to the sum variable
+        sum += marks[l];
+    }
+
+    average = sum/l;
+    printf("\n\nAverage = %d", average);
+
+
     return 0;
 }
