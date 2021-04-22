@@ -65,46 +65,38 @@ float GetStandardDeviation(float *value, int max)
 
 int main()
 {
-    float arrNumbers[100], sum = 0, average;
-    double balance[] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
-    int i, l, max, length =0, marks[10];
+    float data[] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
+    int  length =0;
     float mean, variance, median, devi;
     char buf[1024];
-    printf("Total Number of Elements: ");
-    scanf("%d", &max);
 
-    for(i = 0; i < max; i++)
-    {
-        printf("Enter [%d] Number: ", i + 1);
-        scanf("%f", &arrNumbers[i]);
+    //Calculate the Array Length
+    length = sizeof(data) / sizeof(data[0]);
+    //printf("\nLength: %d", length);
+    //End or the calculation
+
+    //Print the array length
+    printf("Total Numbers: %d\n", length);
+    //Crate a CSV file for store the Features
+    FILE *fpt;
+    fpt = fopen("C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\features.csv", "w+");
+
+    //Calculate the array 5 times for testing
+    for (int o=0; o < 5; o++) {
+        mean = CalculateMean(data, length);
+        median = CalculateMedian(data, length);
+        variance = CalculateVariane(data, length);
+        devi = GetStandardDeviation(data, length);
+        //Writing the data into the file
+        fprintf(fpt,"%f, %f, %f, %f\n", mean, variance, median, devi);
     }
+    //Close the CSV file
+    fclose(fpt);
 
-    printf("Total Numbers: %d\n", max);
-
-    mean = CalculateMean(arrNumbers, max);
-    median = CalculateMedian(arrNumbers, max);
-    variance = CalculateVariane(arrNumbers, max);
-    devi = GetStandardDeviation(arrNumbers, max);
-
+    //Print the calculation values
     printf("Mean: %f", mean);
     printf("\nVariance: %f",  variance);
     printf("\nMedian: %f", median);
     printf("\nDeviation: %f", devi);
-
-    //Calculate the Array Values
-    length = sizeof(balance) / sizeof(balance[0]);
-    printf("\nLength: %d", length);
-    for(l=0; l<85; ++l)
-    {
-        scanf("%d", &marks[l]);
-
-        // adding integers entered by the user to the sum variable
-        sum += marks[l];
-    }
-
-    average = sum/l;
-    printf("\n\nAverage = %d", average);
-
-
     return 0;
 }
