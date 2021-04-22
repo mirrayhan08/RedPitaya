@@ -63,11 +63,37 @@ float GetStandardDeviation(float *value, int max)
     return sqrt(CalculateVariane(value, max));
 }
 
+// A binary search based function that returns index of a peak element
+int findPeakUtil(float arr[], int low, int high, int n)
+{
+    // Fin index of middle element
+    int mid = low + (high - low)/2;  /* (low + high)/2 */
+
+    // Compare middle element with its neighbours (if neighbours exist)
+    if ((mid == 0 || arr[mid-1] <= arr[mid]) &&
+        (mid == n-1 || arr[mid+1] <= arr[mid]))
+        return mid;
+        // If middle element is not peak and its left neighbor is greater than it
+        // then left half must have a peak element
+    else if (mid > 0 && arr[mid-1] > arr[mid])
+        return findPeakUtil(arr, low, (mid -1), n);
+        // If middle element is not peak and its right neighbor is greater than it
+        // then right half must have a peak element
+    else return findPeakUtil(arr, (mid + 1), high, n);
+}
+
+// A wrapper over recursive function findPeakUtil()
+int findPeak(float arr[], int n)
+{
+    return findPeakUtil(arr, 0, n-1, n);
+}
+
 int main()
 {
-    float data[] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
+    //float data[] = {273,274,281,286,284,284,289,295,294,293,300,309,310,309,316,329,328,325,329,348,350,338,350,374,362,364,381,427,407,345,378,412,422,479,401,437,472,406,677,949,589,431,894,920,957,693,1098,723,601,1707,1900,1335,1721,1985,1360,2746,2627,1934,630,1247,1459,797,642,685,671,394,304,403,396,265,247,251,251,208,193,187,177,155,134,131,132,114,101,98,96};
+    float data[] = {1, 3, 20, 4, 1, 30};
     int  length =0;
-    float mean, variance, median, devi;
+    float mean, variance, median, devi, peak;
     char buf[1024];
 
     //Calculate the Array Length
@@ -87,8 +113,9 @@ int main()
         median = CalculateMedian(data, length);
         variance = CalculateVariane(data, length);
         devi = GetStandardDeviation(data, length);
+        peak = findPeak(data, length);
         //Writing the data into the file
-        fprintf(fpt,"%f, %f, %f, %f\n", mean, variance, median, devi);
+        fprintf(fpt,"%f, %f, %f, %f, %f\n", mean, variance, median, devi, peak);
     }
     //Close the CSV file
     fclose(fpt);
@@ -98,5 +125,9 @@ int main()
     printf("\nVariance: %f",  variance);
     printf("\nMedian: %f", median);
     printf("\nDeviation: %f", devi);
+    printf("\nPeak point: %f", peak);
+
+    //Input CSV file as arrya
+
     return 0;
 }
