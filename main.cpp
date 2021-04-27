@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 
+#define BUFFER_SIZE 1024
+#define MAXCHAR 1000
+
 float CalculateMean(float *value, int max)
 {
     int i;
@@ -94,7 +97,20 @@ int main()
     //float data[] = {1, 3, 20, 4, 1, 30};
     int  length =0;
     float mean, variance, median, devi, peak;
-    char buf[1024];
+    char buf[BUFFER_SIZE];
+
+    //CSV open testing
+    FILE *fp;
+    char row[MAXCHAR];
+    fp = fopen("C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\human.csv","r");
+    while (feof(fp) != true)
+    {
+        fgets(row, MAXCHAR, fp);
+        printf("Row: %s", row);
+    }
+
+
+    //End of the CSV open testing
 
     //Calculate the Array Length
     length = sizeof(data) / sizeof(data[0]);
