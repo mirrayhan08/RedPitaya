@@ -123,7 +123,7 @@ int main()
     fpt = fopen("C:\\D\\MS Study\\3rd Semester\\AIS\\RedPitaya\\ml\\features.csv", "w+");
 
     //Calculate the array 5 times for testing
-    for (int o=0; o < 5; o++) {
+    for (int o=0; o < 5; o++) {                 //Create the loop for saving the data 5 times
         mean = CalculateMean(data, length);
         median = CalculateMedian(data, length);
         variance = CalculateVariane(data, length);
