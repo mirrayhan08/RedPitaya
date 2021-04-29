@@ -109,7 +109,6 @@ int main()
         printf("Row: %s", row);
     }
 
-
     //End of the CSV open testing
 
     //Calculate the Array Length
